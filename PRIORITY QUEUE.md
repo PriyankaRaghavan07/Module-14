@@ -1,4 +1,5 @@
-# Exp.No:37  
+
+# Exp.No:14e  
 ## PRIORITY QUEUE
 
 ---
@@ -29,9 +30,42 @@ To write a Python program for simple implementation of Priority Queue using Queu
 
 ### PROGRAM
 
-```
+```python
+class PriorityQueue(object):
+	def __init__(self):
+		self.queue = []
+	def __str__(self):
+		return ' '.join([str(i) for i in self.queue])
+	def isEmpty(self):
+		return len(self.queue) == 0
+	def insert(self, data):
+		self.queue.append(data)
+	def delete(self):
+	    try:
+	        max_val=0
+	        for i in range(len(self.queue)):
+	            if self.queue[i]>self.queue[max_val]:
+	                max_val=i
+	        item=self.queue[max_val]
+	        del self.queue[max_val]
+	        return item
+	    except IndexError:
+	        print()
+	        exit()
+myQueue = PriorityQueue()
+n=int(input())	
+for i in range(0, n):
+    ele = int(input())
+    myQueue.insert(ele)
+	
+print(myQueue)		
+while not myQueue.isEmpty():
+	print(myQueue.delete())
+
 ```
 
 ### OUTPUT
+<img width="1190" height="453" alt="image" src="https://github.com/user-attachments/assets/96f4bb77-1f4f-45d8-bbd7-6b95452f137d" />
 
 ### RESULT
+Therefore, the output is the example to write a Python program for simple implementation of Priority Queue using Queue.
